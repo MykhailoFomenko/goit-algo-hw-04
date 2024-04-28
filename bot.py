@@ -17,6 +17,10 @@ def all (args):
 def change_nummer(contacts, name, new_nummer):
     contacts[name] = new_nummer
     return 'Contact changed'
+
+def phone (contacts, user):
+    new_list = [str(user), str(contacts[user])]
+    return ' '.join(new_list)
     
 
 
@@ -38,7 +42,8 @@ def main():
             print(all(contacts.items()))
         elif command == "change":
             print(change_nummer(contacts, *args))
-
+        elif command == 'phone':
+            print(phone(contacts, args[0]))
         else:
             print("Invalid command.")
 
